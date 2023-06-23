@@ -1,0 +1,161 @@
+body{
+    background-color: #f3f3f3;
+
+}
+nav{
+    border-bottom: 2px solid lightgray;
+    box-shadow: 0 8px 8px -8px lightgray;
+}
+.card{
+    box-shadow: 0 8px 8px -8px lightgray;
+}
+.navBorder{
+    border-right: 2px solid gray;
+}
+.border_none{
+  border: 0px;
+}
+.action_bg{
+  background-color:#f9fbfa;
+  border: 1px solid #f5f5f5;
+  color: #a2aab0;
+}
+.dot {
+    height: 11px;
+    width: 11px;
+    background-color: rgb(30, 196, 30);
+    border-radius: 50%;
+    display: inline-block;
+    margin-top: 18px;
+  }
+  .active{
+    font-weight: bold;
+    color: rgb(30, 196, 30);
+    width: 20%;
+    font-size: 13px;
+    margin-left: 7px;
+    margin-top: 13px;
+  }
+  .title{
+    font-size: 18px;
+    width: 75%;
+    margin-top: 9px;
+    font-weight: 600;
+    color: skyblue;
+    margin-left: 18px;
+  }
+  .eyeicon{
+        margin-left: 22px;
+        background-color: #E1F5FE;
+        width: 8%;
+        border-radius: 50%;
+        margin-top: 4px;
+  }
+  .bg_acqua_blue{
+    background-color:#1fa592;
+  }
+  .acqua_blue{
+    color:#1fa592;
+  }
+  .green{
+    color :#7bbb3a;
+  }
+  .white{
+    background-color: white;
+  }
+  .margin_top{
+    margin-top: 5px;
+  }
+  .playbutton_color{
+    background-color: #1ba796;
+    color:white ;
+    border-radius: 50%;
+  }
+.card-footer{
+    background-color: white;
+    padding: 20px 14px;
+}
+.footerElements{
+    display: flex;
+    justify-content: space-between;
+}
+.togglebutton
+{
+    position: relative;
+}
+.togglebutton label{
+    position: absolute;
+    font-size: small;
+     font-weight: bold;
+}
+.active_checkbox{
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+/* .active_checkbox:checked+.round{
+    left: -23px;
+} */
+ .slider{
+    position: absolute;
+    width: 30px;
+    height: 7px;
+    border-radius: 16%;
+    top: 7px;
+    left: -36px;
+ }
+ .round{
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    position: absolute;
+    top: 0px;
+    left: -23px;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+/* .round::before{
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    position: absolute;
+    top: 0px;
+    left: -23px;
+    -webkit-transition: .4s;
+    transition: .4s;
+} */
+.svgpadding{
+    margin: 0px 10px;
+}
+.footermenu_svg
+{
+    border: 1px;
+    border-radius: 50%;
+    background-color: #EEEEEE;
+}
+.Searchbar{
+  margin-top: -49px;
+  margin-left: 90px;
+}
+.Refresh_button{
+  border: 0px;
+  width: 80px;
+  height: 32px;
+  border-radius: 10%;
+  margin-top: 21px;
+  margin-right: 11px;
+}
+.next_buttons{
+  background-color:  white;
+  border: 0px;
+}
+.margintop{
+  margin-top: 20px;
+}
+.font_size{
+  font-size: 11px;
+  margin-left: 22px;
+}
+.display_none{
+  display: none;
+}
