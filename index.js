@@ -1,11 +1,5 @@
 let carddata =[
   {
-    "title":"ChemicalPersona_Re",
-    "DevideId": "#f8746ec2659e4...",
-    "DeviceType": "TE-RTM",
-    "topborder": "#f9002c"
-  },
-  {
     "title":"NewDevice_RealTime",
     "DevideId": "#c0555fc9aef24d6538...",
     "DeviceType": "TE-RTM",
@@ -18,17 +12,37 @@ let carddata =[
     "topborder": "#f7e700"
   },
   {
+    "title":"ChemicalPersona_Re",
+    "DevideId": "#f8746ec2659e4...",
+    "DeviceType": "TE-RTM",
+    "topborder": "#f9002c"
+  },
+  {
     "title":"UMSADevice3",
-    "DevideId": "# 43fb7888",
+    "DevideId": "#43fb7888",
     "DeviceType": "TE-RTM",
     "topborder": "#f7e700"
   }
-
 ]
+function GetSortOrder(prop) {    
+  return function(a, b) {    
+      if (a[prop] > b[prop]) {    
+          return 1;    
+      } else if (a[prop] < b[prop]) {    
+          return -1;    
+      }    
+      return 0;    
+  }    
+}  
+
+carddata.sort(GetSortOrder("title"));      
+for (var item in carddata) {    
+    console.log(carddata[item].title);    
+}  
 let card = document.getElementById('cardblocks');
 carddata.forEach((n) => {
  let cardcont=
-` <div id="maincard"  class="card" style="width: 18rem;border-top: 5px solid #f9002c;">
+`<div id="maincard"  class="card" style="width: 18rem;border-top: 5px solid #f9002c;">
  <div class="p-0 d-flex">
     <p class="title">`+n.title+`</p>
  <div class="dot"></div>
@@ -88,11 +102,7 @@ carddata.forEach((n) => {
    </div>
 </div>`;
 card.innerHTML+=cardcont;
+
 });
-for (let i = 1; i < carddata.length; i++)
- {
-  if(i>2)
-  {
-    document.getElementById("maincard").style.borderTop="5px solid #f7e700"
-  }
-}
+var a=document.getElementById("ftitle").value;
+alert(a);
