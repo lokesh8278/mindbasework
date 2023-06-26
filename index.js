@@ -24,6 +24,25 @@ let carddata =[
     "topborder": "#f7e700"
   }
 ]
+//searching
+
+function search(input)
+{
+  const filtered = carddata.filter(title => {
+     for (const value of Object.values(title)) 
+     {
+       if (value.toString().toLowerCase().includes(input.value.toLowerCase())) 
+       return true;
+     }
+  })
+  // console.log(filtered.filter({title}));
+  for (var item in filtered) 
+  {    
+    document.getElementById("demo").innerText=filtered[item].title;
+  } 
+}
+
+// sorting 
 function GetSortOrder(prop) {    
   return function(a, b) {    
       if (a[prop] > b[prop]) {    
@@ -34,11 +53,14 @@ function GetSortOrder(prop) {
       return 0;    
   }    
 }  
-
 carddata.sort(GetSortOrder("title"));      
 for (var item in carddata) {    
-    console.log(carddata[item].title);    
+    // console.log(carddata[item].title);    
 }  
+
+
+
+//runtime cards
 let card = document.getElementById('cardblocks');
 carddata.forEach((n) => {
  let cardcont=
@@ -104,5 +126,3 @@ carddata.forEach((n) => {
 card.innerHTML+=cardcont;
 
 });
-var a=document.getElementById("ftitle").value;
-alert(a);
