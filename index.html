@@ -130,7 +130,8 @@
                   <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
                     <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
                   </svg>
-                  <label>Search</label>
+                  <input type="text" id="searchbar" placeholder="Search" style="border: 0;background-color: #f3f3f3;"></input>
+
             </div>
           </div>
           <div class="">
@@ -146,14 +147,13 @@
                       <li><a class="dropdown-item" href="#">Link 3</a></li>
                     </ul>
                 </div> 
-                <div class="dropdown">
-                    <button type="button" class="dropdown-toggle white" style="font-size: 13px;border: 0px;font-weight: bold;margin-left: 8px;margin-right:13px;" data-bs-toggle="dropdown">
+                <div class="dropdown" >
+                    <button type="button"  class="dropdown-toggle white" style="font-size: 13px;border: 0px;font-weight: bold;margin-left: 8px;margin-right:13px;" data-bs-toggle="dropdown">
                       Filter By
                     </button>
-                    <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#">Link 1</a></li>
-                      <li><a class="dropdown-item" href="#">Link 2</a></li>
-                      <li><a class="dropdown-item" href="#">Link 3</a></li>
+                    <ul class="dropdown-menu" id="filterby">
+                      <li><a class="dropdown-item "  value="title" href="#">Name</a></li>
+                      <li><a class="dropdown-item "  value="DevideId" href="#">DeviceId</a></li>
                     </ul>
                 </div> 
                 <div class="white" style="width: 90px;padding: 2px;">
