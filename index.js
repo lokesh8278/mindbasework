@@ -1,48 +1,51 @@
 let carddata =[
   {
-    "title":"NewDevice_RealTime",
-    "DevideId": "#c0555fc9aef24d6538...",
-    "DeviceType": "TE-RTM",
-    "topborder": "#f9002c"
+    "Title":"NewDevice_RealTime",
+    "DeviceId": "#c0555fc9aef24d6538...",
+    "DeviceType": "TE-RTM"
   },
   {
-    "title":"TESiteAsoc-Connect",
-    "DevideId": "# 43fb7888",
-    "DeviceType": "TE-RTM",
-    "topborder": "#f7e700"
+    "Title":"TESiteAsoc-Connect",
+    "DeviceId": "#43fb7888",
+    "DeviceType": "TE-RTM"
   },
   {
-    "title":"ChemicalPersona_Re",
-    "DevideId": "#f8746ec2659e4...",
-    "DeviceType": "TE-RTM",
-    "topborder": "#f9002c"
+    "Title":"ChemicalPersona_Re",
+    "DeviceId": "#f8746ec2659e4...",
+    "DeviceType": "TE-RTM"
   },
   {
-    "title":"UMSADevice3",
-    "DevideId": "#43fb7888",
-    "DeviceType": "TE-RTM",
-    "topborder": "#f7e700"
+    "Title":"UMSADevice3",
+    "DeviceId": "#43fb7888",
+    "DeviceType": "TE-RTM"
   }
 ]
 //searching
 
 function search(input)
 {
-  const filtered = carddata.filter(title => {
-     for (const value of Object.values(title)) 
+  const filtered = carddata.filter(elements => {
+     for (const value of Object.values(elements)) 
      {
        if (value.toString().toLowerCase().includes(input.value.toLowerCase())) 
        return true;
      }
   })
-  // console.log(filtered.filter({title}));
-  for (var item in filtered) 
-  {    
-    document.getElementById("demo").innerText=filtered[item].title;
-  } 
+  cardsruntime(filtered);
 }
-
 // sorting 
+function sortName(item)
+{
+  console.log(item.innerHTML)
+  document.getElementById("filterby").innerHTML = item.innerHTML;
+  carddata.sort(GetSortOrder(item.innerHTML)); 
+  cardsruntime(carddata);
+}
+// function sortDEvID()
+{
+  carddata.sort(GetSortOrder("DevideId")); 
+  cardsruntime(carddata);
+}
 function GetSortOrder(prop) {    
   return function(a, b) {    
       if (a[prop] > b[prop]) {    
@@ -53,20 +56,17 @@ function GetSortOrder(prop) {
       return 0;    
   }    
 }  
-carddata.sort(GetSortOrder("title"));      
-for (var item in carddata) {    
-    // console.log(carddata[item].title);    
-}  
+       
 
-
-
-//runtime cards
+function cardsruntime(carddata)
+{
 let card = document.getElementById('cardblocks');
+card.innerHTML='';
 carddata.forEach((n) => {
  let cardcont=
-`<div id="maincard"  class="card" style="width: 18rem;border-top: 5px solid #f9002c;">
+`<div id="maincard"  class="card mx-2" style="width: 18rem;border-top: 5px solid #f9002c;">
  <div class="p-0 d-flex">
-    <p class="title">`+n.title+`</p>
+    <p class="title">`+n.Title+`</p>
  <div class="dot"></div>
  <p class="active green">Active</p>
  </div>
@@ -75,7 +75,7 @@ carddata.forEach((n) => {
          <h6 style="font-size: 13px;margin-left: 22px;color: gray;">Device ID</h6>
      </div>
      <div class="col-sm-8">
-        <h6 id="devid" style="font-size: 13px;margin-left: 22px;color: gray;">`+n.DevideId+`</h6>
+        <h6 id="devid" style="font-size: 13px;margin-left: 22px;color: gray;">`+n.DeviceId+`</h6>
      </div>
      <div class="col-sm-6">
        <h6 style="font-size: 13px;margin-left: 22px;color: gray;">Device Type</h6>
@@ -126,3 +126,5 @@ carddata.forEach((n) => {
 card.innerHTML+=cardcont;
 
 });
+}
+cardsruntime(carddata);
